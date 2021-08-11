@@ -1,0 +1,61 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 09.07.21 13:42
+Description: Initializing game
+
+java.lang.ExceptionInInitializerError
+	at net.minecraft.client.settings.GameSettings.updateVSync(GameSettings.java:2964)
+	at net.minecraft.client.settings.GameSettings.loadOptions(GameSettings.java:866)
+	at net.minecraft.client.settings.GameSettings.<init>(GameSettings.java:294)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:471)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:402)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+Caused by: java.lang.RuntimeException: org.lwjgl.LWJGLException: No modes available
+	at org.lwjgl.opengl.Display.<clinit>(Display.java:141)
+	... 7 more
+Caused by: org.lwjgl.LWJGLException: No modes available
+	at org.lwjgl.opengl.LinuxDisplay.init(LinuxDisplay.java:740)
+	at org.lwjgl.opengl.Display.<clinit>(Display.java:138)
+	... 7 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.settings.GameSettings.updateVSync(GameSettings.java:2964)
+	at net.minecraft.client.settings.GameSettings.loadOptions(GameSettings.java:866)
+	at net.minecraft.client.settings.GameSettings.<init>(GameSettings.java:294)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:471)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:402)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Linux (amd64) version 5.8.0-59-generic
+	CPU: <unknown>
+	Java Version: 1.8.0_292, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 888940128 bytes (847 MB) / 1029177344 bytes (981 MB) up to 1029177344 bytes (981 MB)
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: 
+	Using VBOs: ~~ERROR~~ NullPointerException: null
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: ~~ERROR~~ NullPointerException: null
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>
