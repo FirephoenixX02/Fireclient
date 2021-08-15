@@ -1,0 +1,24 @@
+package me.firephoenix.fireclient.hud.mod.impl;
+
+import me.firephoenix.fireclient.hud.mod.HudMod;
+
+public class Coordinates extends HudMod{
+	
+	public Coordinates() {
+		super("Cords", 100, 100);
+	}
+	
+	@Override
+	public void draw() {
+		fr.drawString("X:" + mc.thePlayer.posX, getX(), getY(), -1);
+		fr.drawString("Y:" + mc.thePlayer.posY, getX(), getY(), -1);
+		fr.drawString("Z:" + mc.thePlayer.posZ, getX(), getY(), -1);
+		super.draw();
+	}
+	
+	@Override
+	public int getHeight() {
+		return fr.FONT_HEIGHT;
+	}
+	
+}

@@ -1,0 +1,5 @@
+package me.firephoenix.fireclient.hud.mod.impl;
+
+public class Coordinates {
+
+}
