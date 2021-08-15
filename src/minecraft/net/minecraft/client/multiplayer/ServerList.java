@@ -59,6 +59,7 @@ public class ServerList
 
     private void loadFeaturedServers() {
 		this.addServerData(new ServerDataFeatured("PvPDojo", "pvpdojo.com"));
+    	this.addServerData(new ServerDataFeatured("HGwithFriends", "hgwithfriends.club"));
 	}
 
 	public int getFeaturedServerCount() {

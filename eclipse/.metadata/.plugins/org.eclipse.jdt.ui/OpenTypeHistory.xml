@@ -5,8 +5,6 @@
     <typeInfo handle="=Client/src&lt;net.minecraft.client.renderer.entity{Render.java[Render" modifiers="1025" timestamp="1508474235000"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.client.renderer{ItemRenderer.java[ItemRenderer" modifiers="1" timestamp="1624469884056"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.client.gui{GuiButton.java[GuiButton" modifiers="1" timestamp="1624472144435"/>
-    <typeInfo handle="=Client/src&lt;net.minecraft.client.gui.stream{GuiIngestServers.java[GuiIngestServers[ServerList" modifiers="0" timestamp="1508474233000"/>
-    <typeInfo handle="=Client/src&lt;net.minecraft.client.multiplayer{ServerList.java[ServerList" modifiers="1" timestamp="1624561253801"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.client.gui{ServerListEntryNormal.java[ServerListEntryNormal" modifiers="1" timestamp="1624561086370"/>
     <typeInfo handle="=Client/jars\/versions\/1.8.8\/1.8.8.jar=/org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY=/Client\/jars\/versions\/1.8.8\/1.8.8-natives=/&lt;(c.class[c" modifiers="33" timestamp="1597344866915"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.inventory{InventoryBasic.java[InventoryBasic" modifiers="1" timestamp="1508474237000"/>
@@ -25,4 +23,6 @@
     <typeInfo handle="=Client/src&lt;net.minecraft.client{Minecraft.java[Minecraft" modifiers="1" timestamp="1626107988971"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.client.gui{GuiMultiplayer.java[GuiMultiplayer" modifiers="1" timestamp="1627224646011"/>
     <typeInfo handle="=Client/src&lt;net.minecraft.client.gui{GuiIngameMenu.java[GuiIngameMenu" modifiers="1" timestamp="1627225295622"/>
+    <typeInfo handle="=Client/src&lt;net.minecraft.client.gui.stream{GuiIngestServers.java[GuiIngestServers[ServerList" modifiers="0" timestamp="1508474233000"/>
+    <typeInfo handle="=Client/src&lt;net.minecraft.client.multiplayer{ServerList.java[ServerList" modifiers="1" timestamp="1629040393189"/>
 </typeInfoHistroy>

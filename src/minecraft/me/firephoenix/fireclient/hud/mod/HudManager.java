@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import me.firephoenix.fireclient.hud.mod.impl.ArmorStatus;
 import me.firephoenix.fireclient.hud.mod.impl.CPSMod;
+import me.firephoenix.fireclient.hud.mod.impl.Coordinates;
 import me.firephoenix.fireclient.hud.mod.impl.CustomEnchantGlint;
 import me.firephoenix.fireclient.hud.mod.impl.FPSMod;
 import me.firephoenix.fireclient.hud.mod.impl.Keystrokes;
@@ -21,6 +22,7 @@ public class HudManager {
 	public CustomEnchantGlint customGlint;
 	public PerspectiveMod perspective;
 	public ArmorStatus armor;
+	public Coordinates cords;
 
 	public HudManager() {
 
@@ -30,6 +32,7 @@ public class HudManager {
 		hudMods.add(customGlint = new CustomEnchantGlint());
 		hudMods.add(perspective = new PerspectiveMod());
 		hudMods.add(armor = new ArmorStatus());
+		hudMods.add(cords = new Coordinates());
 	}
 	
 	

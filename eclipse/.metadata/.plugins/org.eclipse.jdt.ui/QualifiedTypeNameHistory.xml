@@ -56,4 +56,5 @@
     <fullyQualifiedTypeName name="me.firephoenix.fireclient.hud.mod.impl.ArmorStatus"/>
     <fullyQualifiedTypeName name="net.minecraft.client.gui.GuiMultiplayer"/>
     <fullyQualifiedTypeName name="me.firephoenix.fireclient.ui.GuiMultiplayerIngame"/>
+    <fullyQualifiedTypeName name="me.firephoenix.fireclient.hud.mod.impl.Coordinates"/>
 </qualifiedTypeNameHistroy>

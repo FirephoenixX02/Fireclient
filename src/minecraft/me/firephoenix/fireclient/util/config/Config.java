@@ -39,7 +39,6 @@ public class Config {
 
 	public void loadModConfig() {
 		System.out.println("Loading Mod Config");
-
 		config = ConfigurationAPI.loadExistingConfiguration(new File("Fireclient/mods/modconfiguration.json"));
 		System.out.println(config);
 	}

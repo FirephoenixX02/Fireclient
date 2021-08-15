@@ -21,13 +21,11 @@ public class HudMod {
 	public HudMod(String name, int x, int y) {
 		this.name = name;
 		//System.out.println(name);
-		String _x = "_x";
-		String _y = "_y";
 		//System.out.println(name+_x);
 
 		try {
-			this.x = (int) Fireclient.INSTANCE.config.config.get(name+_x);
-			this.y = (int) Fireclient.INSTANCE.config.config.get(name +_y);
+			this.x = (int) Fireclient.INSTANCE.config.config.get(name + "_x");
+			this.y = (int) Fireclient.INSTANCE.config.config.get(name + "_y");
 			this.setEnabled((boolean) Fireclient.INSTANCE.config.config.get(name + "_enabled"));
 			
 		} catch (NullPointerException e) {
