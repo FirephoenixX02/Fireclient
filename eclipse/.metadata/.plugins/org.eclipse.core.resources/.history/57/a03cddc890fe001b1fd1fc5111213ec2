@@ -13,7 +13,7 @@ public class Coordinates extends HudMod{
 		fr.drawString("X:" + " " + Math.round(mc.thePlayer.posX), getX(), getY(), -1);
 		fr.drawString("Y:" + " " + Math.round(mc.thePlayer.posY), getX(), getY() + 10, -1);
 		fr.drawString("Z:" + " " + Math.round(mc.thePlayer.posZ), getX(), getY() + 20, -1);
-		//fr.drawString("XYZ:" + " " + Math.round(mc.thePlayer.posX) + " " + "/" + " " + Math.round(mc.thePlayer.posY) + " " + "/" + " " + Math.round(mc.thePlayer.posZ), getX(), getY() , -1);
+		fr.drawString("XYZ:" + " " + Math.round(mc.thePlayer.posX) + " " + "/" + " " + Math.round(mc.thePlayer.posY) + " " + "/" + " " + Math.round(mc.thePlayer.posZ), getX(), getY() , -1);
 		super.draw();
 	}
 	
