@@ -10,7 +10,9 @@ import me.firephoenix.fireclient.hud.mod.impl.CustomEnchantGlint;
 import me.firephoenix.fireclient.hud.mod.impl.FPSMod;
 import me.firephoenix.fireclient.hud.mod.impl.Keystrokes;
 import me.firephoenix.fireclient.hud.mod.impl.PerspectiveMod;
+import me.firephoenix.fireclient.hud.mod.impl.ServerName;
 import me.firephoenix.fireclient.hud.mod.impl.TestMod;
+import me.firephoenix.fireclient.hud.mod.impl.Version;
 
 public class HudManager {
 
@@ -23,6 +25,8 @@ public class HudManager {
 	public PerspectiveMod perspective;
 	public ArmorStatus armor;
 	public Coordinates cords;
+	public ServerName servername;
+	public Version version;
 
 	public HudManager() {
 
@@ -33,6 +37,8 @@ public class HudManager {
 		hudMods.add(perspective = new PerspectiveMod());
 		hudMods.add(armor = new ArmorStatus());
 		hudMods.add(cords = new Coordinates());
+		hudMods.add(servername = new ServerName());
+		hudMods.add(version = new Version());
 	}
 	
 	
