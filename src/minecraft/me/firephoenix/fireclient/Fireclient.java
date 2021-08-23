@@ -30,7 +30,7 @@ public class Fireclient {
 
 		config.loadModConfig();
 
-		SessionChanger.getInstance().setUser("otis.schmedt@gmx.de", "qQ01bJ&ReASYblaL");
+		SessionChanger.getInstance().setUserOffline("TestUser");
 
 
 		System.out.println("Starting " + NAMEVER + " " + "by " + AUTHOR);
