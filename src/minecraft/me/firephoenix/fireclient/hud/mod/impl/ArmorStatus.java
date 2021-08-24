@@ -20,12 +20,12 @@ public class ArmorStatus extends HudMod{
 	
 	@Override
 	public int getWidth() {
-		return width;
+		return 40;
 	}
 	
 	@Override
 	public int getHeight() {
-		return height;
+		return 60;
 	}
 	
 	public void draw() {

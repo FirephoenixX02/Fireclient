@@ -1,5 +1,6 @@
 package me.firephoenix.fireclient;
 
+import me.firephoenix.fireclient.cosmetics.CosmeticSusanoo;
 import me.firephoenix.fireclient.event.EventManager;
 import me.firephoenix.fireclient.event.EventTarget;
 import me.firephoenix.fireclient.event.impl.ClientTick;
