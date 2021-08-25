@@ -11,12 +11,12 @@ anaglyph3d:false
 maxFps:260
 fboEnable:true
 difficulty:1
-fancyGraphics:true
+fancyGraphics:false
 ao:2
-renderClouds:true
+renderClouds:fast
 resourcePacks:[]
 incompatibleResourcePacks:[]
-lastServer:87.179.209.218:25577
+lastServer:hglabor.de
 lang:en_US
 chatVisibility:0
 chatColors:true
@@ -92,12 +92,12 @@ key_key.hotbar.9:47
 key_of.key.zoom:45
 key_Open Mod Screen:54
 key_Perspective Mod:56
-soundCategory_master:0.12913907
+soundCategory_master:0.75827813
 soundCategory_music:0.0
 soundCategory_record:1.0
-soundCategory_weather:1.0
+soundCategory_weather:0.57746476
 soundCategory_block:1.0
-soundCategory_hostile:1.0
+soundCategory_hostile:0.556338
 soundCategory_neutral:1.0
 soundCategory_player:1.0
 soundCategory_ambient:1.0

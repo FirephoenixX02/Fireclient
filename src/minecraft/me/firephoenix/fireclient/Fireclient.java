@@ -26,12 +26,12 @@ public class Fireclient {
 	public void startup() {
 		eventManager = new EventManager();
 		config = new Config();
+		config.loadModConfig();
 		modManager = new ModManager();
 		hudManager = new HudManager();
 
-		config.loadModConfig();
 
-		SessionChanger.getInstance().setUserOffline("TestUser");
+		SessionChanger.getInstance().setUserOffline("DevAcc");
 
 
 		System.out.println("Starting " + NAMEVER + " " + "by " + AUTHOR);

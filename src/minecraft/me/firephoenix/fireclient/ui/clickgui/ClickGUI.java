@@ -17,14 +17,14 @@ public class ClickGUI extends GuiScreen{
 	@Override
 	public void initGui() {
 		super.initGui();
-		this.modButtons.add(new ModButton(210, 60, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.fps));
+		this.modButtons.add(new ModButton(200, 60, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.fps));
 		this.modButtons.add(new ModButton(240, 60, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.keystrokes));
-		this.modButtons.add(new ModButton(330, 60, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.cps));
-		this.modButtons.add(new ModButton(400, 60, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.perspective));
-		this.modButtons.add(new ModButton(210, 90, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.armor));
-		this.modButtons.add(new ModButton(280, 90, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.cords));
-		this.modButtons.add(new ModButton(310, 90, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.servername));
-		this.modButtons.add(new ModButton(210, 110, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.version));
+		this.modButtons.add(new ModButton(200, 90, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.cps));
+		this.modButtons.add(new ModButton(240, 90, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.perspective));
+		this.modButtons.add(new ModButton(200, 110, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.armor));
+		this.modButtons.add(new ModButton(280, 110, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.cords));
+		this.modButtons.add(new ModButton(200, 140, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.servername));
+		this.modButtons.add(new ModButton(280, 140, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.version));
 		
 	}
 

@@ -1,9 +1,12 @@
 package me.firephoenix.fireclient.hud.mod;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import me.firephoenix.fireclient.Fireclient;
 import me.firephoenix.fireclient.hud.DraggableComponent;
+import me.firephoenix.fireclient.settings.Setting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 
@@ -12,6 +15,8 @@ public class HudMod {
 	public Minecraft mc = Minecraft.getMinecraft();
 	public FontRenderer fr = mc.fontRendererObj;
 
+	public ArrayList<Setting> settings;
+	
 	public String name;
 	public boolean enabled = true;
 	public DraggableComponent drag;
@@ -35,8 +40,12 @@ public class HudMod {
 			this.y = y;
 			this.enabled = false;
 		}
-		
+		settings = new ArrayList<Setting>();
 		drag = new DraggableComponent(this.x, this.y, getWidth(), getHeight(), new Color(0, 0, 0, 0).getRGB());
+	}
+	
+	public void addSettings(Setting...sets) {
+		this.settings.add((Setting) Arrays.asList(sets));
 	}
 
 	public int getWidth() {

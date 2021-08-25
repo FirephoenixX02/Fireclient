@@ -1,8 +1,13 @@
 package me.firephoenix.fireclient.hud.mod.impl;
 
 import me.firephoenix.fireclient.hud.mod.HudMod;
+import me.firephoenix.fireclient.settings.BooleanSetting;
+import me.firephoenix.fireclient.settings.ModeSetting;
 
 public class TestMod extends HudMod{
+	
+	BooleanSetting test = new BooleanSetting("Test", true);
+	ModeSetting testMode = new ModeSetting("Test Mode", "Mode1", "Mode2", "Mode3");
 
 	public TestMod() {
 		super("testMod", 5, 5);
