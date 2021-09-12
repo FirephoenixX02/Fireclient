@@ -176,7 +176,6 @@ public abstract class LayerArmorBase<T extends ModelBase> implements LayerRender
                 GlStateManager.depthMask(false);
                 float f1 = 0.5F;
                 GlStateManager.color(f1, f1, f1, 1.0F);
-                
                 float[] customGlintColor = HudManager.getGlintColor().getColor().getRGBComponents(null);
 
                 for (int i = 0; i < 2; ++i)

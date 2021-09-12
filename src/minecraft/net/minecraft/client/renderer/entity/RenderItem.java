@@ -221,7 +221,6 @@ public class RenderItem implements IResourceManagerReloadListener
                 }
 
                 int customEnchantGlintColor = HudManager.getGlintColor().getColor().getRGB();
-                
                 GlStateManager.matrixMode(5890);
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(8.0F, 8.0F, 8.0F);

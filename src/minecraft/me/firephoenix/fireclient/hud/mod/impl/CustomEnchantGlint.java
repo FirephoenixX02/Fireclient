@@ -4,18 +4,19 @@ import java.awt.Color;
 
 import me.firephoenix.fireclient.hud.mod.HudMod;
 
-public class CustomEnchantGlint extends HudMod {
+public class CustomEnchantGlint extends HudMod
+{
+    public CustomEnchantGlint()
+    {
+        super("Custom Enchant Glint", 100, 100);
+    }
 
-	public CustomEnchantGlint() {
-		super("Custom Enchant Glint", 100, 100);
-	}
+    private Color DEFAULT_COLOR = new Color(128, 64, 204);
 
-	private Color DEFAULT_COLOR = new Color(128, 64, 204);
+    private Color glintColor = new Color(255, 0, 0);
 
-	private Color glintColor = new Color(255, 0, 0);
-
-	public Color getColor() {
-		return glintColor;
-	}
-
+    public Color getColor()
+    {
+        return glintColor;
+    }
 }

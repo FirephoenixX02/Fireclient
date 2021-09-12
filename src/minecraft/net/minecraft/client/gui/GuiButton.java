@@ -91,8 +91,7 @@ public class GuiButton extends Gui
             GlStateManager.blendFunc(770, 771);
             //this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + i * 20, this.width / 2, this.height);
             //this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + i * 20, this.width / 2, this.height);
-            
-            Gui.drawRect(this.xPosition, this.yPosition, this.xPosition + this.width ,this.yPosition + this.height, new Color(0,0,0, 170).getRGB());
+            Gui.drawRect(this.xPosition, this.yPosition, this.xPosition + this.width , this.yPosition + this.height, new Color(0, 0, 0, 170).getRGB());
             this.mouseDragged(mc, mouseX, mouseY);
             int j = 14737632;
 
@@ -102,7 +101,7 @@ public class GuiButton extends Gui
             }
             else if (this.hovered)
             {
-                j = new Color(255,0,0,255).getRGB();
+                j = new Color(255, 0, 0, 255).getRGB();
             }
 
             this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, j);

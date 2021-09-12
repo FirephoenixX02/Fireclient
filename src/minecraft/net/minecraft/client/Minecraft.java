@@ -564,7 +564,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.effectRenderer = new EffectRenderer(this.theWorld, this.renderEngine);
         this.checkGLError("Post startup");
         this.ingameGUI = new GuiIngame(this);
-        
         Fireclient.INSTANCE.startup();
 
         if (this.serverName != null)
@@ -1035,7 +1034,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     {
         try
         {
-        	Fireclient.INSTANCE.shutdown();
+            Fireclient.INSTANCE.shutdown();
             this.stream.shutdownStream();
             logger.info("Stopping!");
 
@@ -1894,11 +1893,13 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     KeyBinding.onTick(k);
                 }
 
-				KeyEvent event = new KeyEvent(k);
-				event.call();
-				if(event.isCancelled()) {
-					return;
-				}
+                KeyEvent event = new KeyEvent(k);
+                event.call();
+
+                if (event.isCancelled())
+                {
+                    return;
+                }
 
                 if (this.debugCrashKeyPressTime > 0L)
                 {
@@ -2257,7 +2258,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         ClientTick event = new ClientTick();
         event.call();
-        
         this.mcProfiler.endSection();
         this.systemTime = getSystemTime();
     }

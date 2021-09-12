@@ -380,10 +380,11 @@ public class GuiIngame extends Gui
                 this.renderHotbarItem(j, k, l, partialTicks, entityplayer);
             }
 
-            if(!(mc.currentScreen instanceof HUDConfigScreen)) {
-            	Fireclient.INSTANCE.hudManager.renderMods();
+            if (!(mc.currentScreen instanceof HUDConfigScreen))
+            {
+                Fireclient.INSTANCE.hudManager.renderMods();
             }
-            
+
             RenderHelper.disableStandardItemLighting();
             GlStateManager.disableRescaleNormal();
             GlStateManager.disableBlend();

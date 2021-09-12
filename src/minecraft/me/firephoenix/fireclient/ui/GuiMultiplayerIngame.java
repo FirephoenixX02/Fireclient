@@ -6,36 +6,39 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiScreen;
 
-public class GuiMultiplayerIngame extends GuiMultiplayer {
+public class GuiMultiplayerIngame extends GuiMultiplayer
+{
+    public GuiMultiplayerIngame()
+    {
+        super(null);
+    }
 
-	public GuiMultiplayerIngame() {
-		super(null);
+    @Override
+    protected void actionPerformed(GuiButton button) throws IOException
+    {
+        if (button.id == 1 || button.id == 4)
+        {
+            disconnect();
+        }
 
-	}
+        super.actionPerformed(button);
+    }
 
-	@Override
-	protected void actionPerformed(GuiButton button) throws IOException {
+    @Override
+    public void connectToSelected()
+    {
+        disconnect();
+        super.connectToSelected();
+    }
 
-		if (button.id == 1 || button.id == 4) {
-			disconnect();
-		}
-
-		super.actionPerformed(button);
-	}
-
-	@Override
-	public void connectToSelected() {
-		disconnect();
-		super.connectToSelected();
-	}
-
-	private void disconnect() {
-		if (this.mc.theWorld != null) {
-			this.mc.theWorld.sendQuittingDisconnectingPacket();
-			this.mc.loadWorld(null);
-			this.mc.displayGuiScreen(null);
-			this.parentScreen = null;
-		}
-	}
-
+    private void disconnect()
+    {
+        if (this.mc.theWorld != null)
+        {
+            this.mc.theWorld.sendQuittingDisconnectingPacket();
+            this.mc.loadWorld(null);
+            this.mc.displayGuiScreen(null);
+            this.parentScreen = null;
+        }
+    }
 }

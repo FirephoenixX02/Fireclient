@@ -52,7 +52,7 @@ public class FontUtils
     {
         for (Object s0 : p_readCustomCharWidths_0_.keySet())
         {
-        	String s = (String) s0;
+            String s = (String) s0;
             String s1 = "width.";
 
             if (s.startsWith(s1))

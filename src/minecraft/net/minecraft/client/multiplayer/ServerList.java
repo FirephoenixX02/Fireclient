@@ -57,22 +57,28 @@ public class ServerList
         }
     }
 
-    private void loadFeaturedServers() {
-		this.addServerData(new ServerDataFeatured("PvPDojo", "pvpdojo.com"));
-    	this.addServerData(new ServerDataFeatured("HGwithFriends", "hgwithfriends.club"));
-	}
+    private void loadFeaturedServers()
+    {
+        this.addServerData(new ServerDataFeatured("PvPDojo", "pvpdojo.com"));
+        this.addServerData(new ServerDataFeatured("HGwithFriends", "hgwithfriends.club"));
+    }
 
-	public int getFeaturedServerCount() {
-		int count = 0;
-		for (ServerData sd : this.servers) {
-			if (sd instanceof ServerDataFeatured) {
-				count++;
-			}
-		}
-		return count;
-	}
-    
-	/**
+    public int getFeaturedServerCount()
+    {
+        int count = 0;
+
+        for (ServerData sd : this.servers)
+        {
+            if (sd instanceof ServerDataFeatured)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    /**
      * Runs getNBTCompound on each ServerData instance, puts everything into a "servers" NBT list and writes it to
      * servers.dat.
      */
@@ -84,9 +90,10 @@ public class ServerList
 
             for (ServerData serverdata : this.servers)
             {
-            	if(!(serverdata instanceof ServerDataFeatured)) {
+                if (!(serverdata instanceof ServerDataFeatured))
+                {
                     nbttaglist.appendTag(serverdata.getNBTCompound());
-            	}
+                }
             }
 
             NBTTagCompound nbttagcompound = new NBTTagCompound();

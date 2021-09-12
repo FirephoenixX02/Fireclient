@@ -240,7 +240,8 @@ public class ShaderPackParser
 
         for (Object s10 : props.keySet())
         {
-        	String s1 =(String) s10;
+            String s1 = (String) s10;
+
             if (s1.startsWith(s))
             {
                 String s2 = s1.substring(s.length());

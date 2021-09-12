@@ -274,7 +274,7 @@ public class GameSettings
 
     public KeyBinding CLICK_GUI = new KeyBinding("Open Mod Screen", Keyboard.KEY_RSHIFT, "Fireclient");
     public KeyBinding PERSPECTIVE_MOD = new KeyBinding("Perspective Mod", Keyboard.KEY_LMENU, "Fireclient");
-    
+
     public GameSettings(Minecraft mcIn, File p_i46326_2_)
     {
         this.keyBindings = (KeyBinding[])((KeyBinding[])ArrayUtils.addAll(new KeyBinding[] {this.keyBindAttack, this.keyBindUseItem, this.keyBindForward, this.keyBindLeft, this.keyBindBack, this.keyBindRight, this.keyBindJump, this.keyBindSneak, this.keyBindSprint, this.keyBindDrop, this.keyBindInventory, this.keyBindChat, this.keyBindPlayerList, this.keyBindPickBlock, this.keyBindCommand, this.keyBindScreenshot, this.keyBindTogglePerspective, this.keyBindSmoothCamera, this.keyBindStreamStartStop, this.keyBindStreamPauseUnpause, this.keyBindStreamCommercials, this.keyBindStreamToggleMic, this.keyBindFullscreen, this.keyBindSpectatorOutlines}, this.keyBindsHotbar));
@@ -295,7 +295,7 @@ public class GameSettings
         this.loadOptions();
         Config.initGameSettings(this);
     }
-    
+
     public GameSettings()
     {
         this.keyBindings = (KeyBinding[])((KeyBinding[])ArrayUtils.addAll(new KeyBinding[] {this.keyBindAttack, this.keyBindUseItem, this.keyBindForward, this.keyBindLeft, this.keyBindBack, this.keyBindRight, this.keyBindJump, this.keyBindSneak, this.keyBindSprint, this.keyBindDrop, this.keyBindInventory, this.keyBindChat, this.keyBindPlayerList, this.keyBindPickBlock, this.keyBindCommand, this.keyBindScreenshot, this.keyBindTogglePerspective, this.keyBindSmoothCamera, this.keyBindStreamStartStop, this.keyBindStreamPauseUnpause, this.keyBindStreamCommercials, this.keyBindStreamToggleMic, this.keyBindFullscreen, this.keyBindSpectatorOutlines}, this.keyBindsHotbar));
@@ -306,11 +306,11 @@ public class GameSettings
         this.forceUnicodeFont = false;
         addClientKeybinds();
     }
-    
-    private void addClientKeybinds() {
-    	this.keyBindings = ((KeyBinding[])ArrayUtils.add(this.keyBindings, this.CLICK_GUI));
-    	this.keyBindings = ((KeyBinding[])ArrayUtils.add(this.keyBindings, this.PERSPECTIVE_MOD));
-    	
+
+    private void addClientKeybinds()
+    {
+        this.keyBindings = ((KeyBinding[])ArrayUtils.add(this.keyBindings, this.CLICK_GUI));
+        this.keyBindings = ((KeyBinding[])ArrayUtils.add(this.keyBindings, this.PERSPECTIVE_MOD));
     }
 
     /**

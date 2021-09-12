@@ -74,7 +74,7 @@ public class BlockAliases
 
             for (Object s10 : properties.keySet())
             {
-            	String s1 =(String) s10;
+                String s1 = (String) s10;
                 String s2 = properties.getProperty(s1);
                 String s3 = "block.";
 

@@ -13,50 +13,56 @@ import net.minecraft.client.gui.GuiSelectWorld;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 
-public class FireclientMainMenu extends GuiScreen{
+public class FireclientMainMenu extends GuiScreen
+{
+    @Override
+    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+    {
+        mc.getTextureManager().bindTexture(new ResourceLocation("mainmenu/main_menu.jpg"));;
+        this.drawModalRectWithCustomSizedTexture(0, 0, 0, 0, this.width, this.height, this.width, this.height);
+        //Gui.drawRect(0, 0, 225, this.height, new Color(0, 0 , 0, 170).getRGB());
+        //Gui.drawRect(0, 0, 480, this.height, new Color(0, 0, 0, 120).getRGB()); //Darker BG
+        GlStateManager.pushMatrix();
+        GlStateManager.scale(3, 3, 1);
+        this.drawCenteredString(mc.fontRendererObj, Fireclient.INSTANCE.NAME, 77, 14, -1);
+        GlStateManager.popMatrix();
+        mc.fontRendererObj.drawStringWithShadow(Fireclient.INSTANCE.VERSION, 300, 35, new Color(255, 0, 0, 255).getRGB());
+        super.drawScreen(mouseX, mouseY, partialTicks);
+    }
 
-	@Override
-	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-		mc.getTextureManager().bindTexture(new ResourceLocation("mainmenu/main_menu.jpg"));;
-		this.drawModalRectWithCustomSizedTexture(0, 0, 0, 0, this.width, this.height, this.width, this.height);
-		
-		Gui.drawRect(0, 0, 225, this.height, new Color(0, 0 , 0, 170).getRGB());
-		GlStateManager.pushMatrix();
-		GlStateManager.scale(3, 3, 1);
-		this.drawCenteredString(mc.fontRendererObj, Fireclient.INSTANCE.NAME, 36, 12, -1);
-		GlStateManager.popMatrix();
-		mc.fontRendererObj.drawStringWithShadow(Fireclient.INSTANCE.VERSION, 180, 30, new Color(255, 0, 0, 255).getRGB());
-		
-		super.drawScreen(mouseX, mouseY, partialTicks); 
-	}
-	
-	@Override
-	public void initGui() {
-		this.buttonList.add(new GuiButton(1, 10 , height / 2 - 40, "Singleplayer"));
-		this.buttonList.add(new GuiButton(2, 10 , height / 2 - 15, "Multiplayer"));
-		this.buttonList.add(new GuiButton(3, 10 , height / 2 + 10, "Settings"));
-		this.buttonList.add(new GuiButton(4, 10 , height / 2 + 35, "Quit"));
-		super.initGui();
-	}
-	
-	@Override
-	protected void actionPerformed(GuiButton button) throws IOException {
-		if(button.id == 1) {
-			mc.displayGuiScreen(new GuiSelectWorld(this));
-		}
-		
-		if(button.id == 2) {
-			mc.displayGuiScreen(new GuiMultiplayer(this));
-		}
-		
-		if(button.id == 3) {
-			mc.displayGuiScreen(new GuiOptions(this, mc.gameSettings));
-		}
-		
-		if(button.id == 4) {
-			mc.shutdown();
-		}
-		super.actionPerformed(button);
-	}
-	
+    @Override
+    public void initGui()
+    {
+        this.buttonList.add(new GuiButton(1, 130 , height / 2 - 40, "Singleplayer"));
+        this.buttonList.add(new GuiButton(2, 130 , height / 2 - 15, "Multiplayer"));
+        this.buttonList.add(new GuiButton(3, 130 , height / 2 + 10, "Settings"));
+        this.buttonList.add(new GuiButton(4, 130 , height / 2 + 35, "Quit"));
+        super.initGui();
+    }
+
+    @Override
+    protected void actionPerformed(GuiButton button) throws IOException
+    {
+        if (button.id == 1)
+        {
+            mc.displayGuiScreen(new GuiSelectWorld(this));
+        }
+
+        if (button.id == 2)
+        {
+            mc.displayGuiScreen(new GuiMultiplayer(this));
+        }
+
+        if (button.id == 3)
+        {
+            mc.displayGuiScreen(new GuiOptions(this, mc.gameSettings));
+        }
+
+        if (button.id == 4)
+        {
+            mc.shutdown();
+        }
+
+        super.actionPerformed(button);
+    }
 }

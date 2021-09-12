@@ -419,12 +419,12 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
                 this.btnEditServer.enabled = true;
                 this.btnDeleteServer.enabled = true;
             }
-            
-            if(savedServerList.getServerData(index) instanceof ServerDataFeatured) {
+
+            if (savedServerList.getServerData(index) instanceof ServerDataFeatured)
+            {
                 this.btnEditServer.enabled = false;
                 this.btnDeleteServer.enabled = false;
             }
-            
         }
     }
 

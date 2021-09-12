@@ -12,141 +12,155 @@ import me.firephoenix.fireclient.hud.mod.HudMod;
 import me.firephoenix.fireclient.mod.Category;
 import me.firephoenix.fireclient.mod.Mod;
 
-public class Keystrokes extends HudMod {
+public class Keystrokes extends HudMod
+{
+    public Keystrokes()
+    {
+        super("Keystrokes", 100, 100);
+    }
 
-	public Keystrokes() {
-		super("Keystrokes", 100, 100);
-	}
+    public static enum KeystrokesMode
+    {
+        WASD(Key.W, Key.A, Key.S, Key.D), WASD_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB);
 
-	public static enum KeystrokesMode {
+        private final Key[] keys;
+        private int width, height;
 
-		WASD(Key.W, Key.A, Key.S, Key.D), WASD_MOUSE(Key.W, Key.A, Key.S, Key.D, Key.LMB, Key.RMB);
+        private KeystrokesMode(Key... keysIn)
+        {
+            this.keys = keysIn;
 
-		private final Key[] keys;
-		private int width, height;
+            for (Key key : keys)
+            {
+                this.width = Math.max(this.width, key.getX() + key.getWidth());
+                this.height = Math.max(this.height, key.getY() + key.getHeight());
+            }
+        }
 
-		private KeystrokesMode(Key... keysIn) {
-			this.keys = keysIn;
+        public int getHeight()
+        {
+            return height;
+        }
 
-			for (Key key : keys) {
-				this.width = Math.max(this.width, key.getX() + key.getWidth());
-				this.height = Math.max(this.height, key.getY() + key.getHeight());
-			}
-		}
+        public int getWidth()
+        {
+            return width;
+        }
 
-		public int getHeight() {
-			return height;
-		}
+        public Key[] getKeys()
+        {
+            return keys;
+        }
+    }
 
-		public int getWidth() {
-			return width;
-		}
+    public static class Key
+    {
+        public static Minecraft mc = Minecraft.getMinecraft();
 
-		public Key[] getKeys() {
-			return keys;
-		}
-	}
+        private static final Key W = new Key("W", mc.gameSettings.keyBindForward, 21, 1, 18, 18);
+        private static final Key A = new Key("A", mc.gameSettings.keyBindLeft, 1, 21, 18, 18);
+        private static final Key S = new Key("S", mc.gameSettings.keyBindBack, 21, 21, 18, 18);
+        private static final Key D = new Key("D", mc.gameSettings.keyBindRight, 41, 21, 18, 18);
 
-	public static class Key {
-		public static Minecraft mc = Minecraft.getMinecraft();
+        private static final Key LMB = new Key("LMB", mc.gameSettings.keyBindAttack, 1, 41, 28, 18);
+        private static final Key RMB = new Key("RMB", mc.gameSettings.keyBindUseItem, 31, 41, 28, 18);
 
-		private static final Key W = new Key("W", mc.gameSettings.keyBindForward, 21, 1, 18, 18);
-		private static final Key A = new Key("A", mc.gameSettings.keyBindLeft, 1, 21, 18, 18);
-		private static final Key S = new Key("S", mc.gameSettings.keyBindBack, 21, 21, 18, 18);
-		private static final Key D = new Key("D", mc.gameSettings.keyBindRight, 41, 21, 18, 18);
+        private final String name;
+        private final KeyBinding keyBind;
+        private final int x, y, w, h;
 
-		private static final Key LMB = new Key("LMB", mc.gameSettings.keyBindAttack, 1, 41, 28, 18);
-		private static final Key RMB = new Key("RMB", mc.gameSettings.keyBindUseItem, 31, 41, 28, 18);
+        public Key(String name, KeyBinding keyBind, int x, int y, int w, int h)
+        {
+            this.name = name;
+            this.keyBind = keyBind;
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+        }
 
-		private final String name;
-		private final KeyBinding keyBind;
-		private final int x, y, w, h;
+        public boolean isDown()
+        {
+            return keyBind.isKeyDown();
+        }
 
-		public Key(String name, KeyBinding keyBind, int x, int y, int w, int h) {
-			this.name = name;
-			this.keyBind = keyBind;
-			this.x = x;
-			this.y = y;
-			this.w = w;
-			this.h = h;
-		}
+        public int getHeight()
+        {
+            return h;
+        }
 
-		public boolean isDown() {
-			return keyBind.isKeyDown();
-		}
+        public int getWidth()
+        {
+            return w;
+        }
 
-		public int getHeight() {
-			return h;
-		}
+        public String getName()
+        {
+            return name;
+        }
 
-		public int getWidth() {
-			return w;
-		}
+        public int getX()
+        {
+            return x;
+        }
 
-		public String getName() {
-			return name;
-		}
+        public int getY()
+        {
+            return y;
+        }
+    }
 
-		public int getX() {
-			return x;
-		}
+    private KeystrokesMode mode = KeystrokesMode.WASD_MOUSE;
 
-		public int getY() {
-			return y;
-		}
-	}
+    @Override
+    public void draw()
+    {
+        GL11.glPushMatrix();
 
-	private KeystrokesMode mode = KeystrokesMode.WASD_MOUSE;
+        for (Key key : mode.getKeys())
+        {
+            int textWidth = fr.getStringWidth(key.getName());
+            Gui.drawRect(getX() + key.getX(), getY() + key.getY(), getX() + key.getX() + key.getWidth(),
+                         getY() + key.getY() + key.getHeight(),
+                         key.isDown() ? new Color(255, 255, 255, 102).getRGB() : new Color(0, 0, 0, 120).getRGB());
+            fr.drawString(key.getName(), getX() + key.getX() + key.getWidth() / 2 - textWidth / 2,
+                          getY() + key.getY() + key.getHeight() / 2 - 4,
+                          key.isDown() ? new Color(0, 0, 0, 255).getRGB() : -1);
+        }
 
-	@Override
-	public void draw() {
-		GL11.glPushMatrix();
+        GL11.glPopMatrix();
+        super.draw();
+    }
 
-		for (Key key : mode.getKeys()) {
+    @Override
+    public void renderDummy(int mouseX, int mouseY)
+    {
+        GL11.glPushMatrix();
 
-			int textWidth = fr.getStringWidth(key.getName());
+        for (Key key : mode.getKeys())
+        {
+            int textWidth = fr.getStringWidth(key.getName());
+            Gui.drawRect(getX() + key.getX(), getY() + key.getY(), getX() + key.getX() + key.getWidth(),
+                         getY() + key.getY() + key.getHeight(),
+                         key.isDown() ? new Color(255, 255, 255, 102).getRGB() : new Color(0, 0, 0, 120).getRGB());
+            fr.drawString(key.getName(), getX() + key.getX() + key.getWidth() / 2 - textWidth / 2,
+                          getY() + key.getY() + key.getHeight() / 2 - 4,
+                          key.isDown() ? new Color(0, 0, 0, 255).getRGB() : -1);
+        }
 
-			Gui.drawRect(getX() + key.getX(), getY() + key.getY(), getX() + key.getX() + key.getWidth(),
-					getY() + key.getY() + key.getHeight(),
-					key.isDown() ? new Color(255, 255, 255, 102).getRGB() : new Color(0, 0, 0, 120).getRGB());
+        GL11.glPopMatrix();
+        super.renderDummy(mouseX, mouseY);
+    }
 
-			fr.drawString(key.getName(), getX() + key.getX() + key.getWidth() / 2 - textWidth / 2,
-					getY() + key.getY() + key.getHeight() / 2 - 4,
-					key.isDown() ? new Color(0, 0, 0, 255).getRGB() : -1);
-		}
+    @Override
+    public int getWidth()
+    {
+        return 58;
+    }
 
-		GL11.glPopMatrix();
-		super.draw();
-	}
-
-	@Override
-	public void renderDummy(int mouseX, int mouseY) {
-		GL11.glPushMatrix();
-
-		for (Key key : mode.getKeys()) {
-
-			int textWidth = fr.getStringWidth(key.getName());
-
-			Gui.drawRect(getX() + key.getX(), getY() + key.getY(), getX() + key.getX() + key.getWidth(),
-					getY() + key.getY() + key.getHeight(),
-					key.isDown() ? new Color(255, 255, 255, 102).getRGB() : new Color(0, 0, 0, 120).getRGB());
-
-			fr.drawString(key.getName(), getX() + key.getX() + key.getWidth() / 2 - textWidth / 2,
-					getY() + key.getY() + key.getHeight() / 2 - 4,
-					key.isDown() ? new Color(0, 0, 0, 255).getRGB() : -1);
-		}
-
-		GL11.glPopMatrix();
-		super.renderDummy(mouseX, mouseY);
-	}
-
-	@Override
-	public int getWidth() {
-		return 58;
-	}
-
-	@Override
-	public int getHeight() {
-		return 72;
-	}
+    @Override
+    public int getHeight()
+    {
+        return 72;
+    }
 }
