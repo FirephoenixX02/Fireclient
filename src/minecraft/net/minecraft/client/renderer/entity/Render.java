@@ -2,7 +2,9 @@ package net.minecraft.client.renderer.entity;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
@@ -362,7 +364,21 @@ public abstract class Render<T extends Entity>
             Tessellator tessellator = Tessellator.getInstance();
             WorldRenderer worldrenderer = tessellator.getWorldRenderer();
             byte b0 = 0;
-
+           
+            /**
+             * Render Admin Label before Player Name 
+             */
+            String uuid = Minecraft.getMinecraft().thePlayer.getUniqueID().toString();
+            
+            if (entityIn instanceof AbstractClientPlayer) {
+            	if(uuid.contains("b0516eeab4c14e41bc1cc188c94fe064") || uuid.contains("6dac3752fc0444d3b44bf1c9e0733494") || uuid.contains("ff8edbe7e8494bc4ab1519c3757098e7") || uuid.contains("37ee5d6a797941868d65981fbea1b775")) {
+            		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation("Label/label.png"));
+            		Gui.drawModalRectWithCustomSizedTexture(-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), 2 - 12, -2, 10, 10, 10, 10, 10);
+            	}
+            }
+            /**
+             * Label End
+             */
             if (str.equals("deadmau5"))
             {
                 b0 = -10;
