@@ -372,7 +372,7 @@ public abstract class Render<T extends Entity>
             if (entityIn instanceof AbstractClientPlayer) {
             	if(entityIn.getName().equals("NieGestorben") || entityIn.getName().equals("DerEchteSaft") || entityIn.getName().equals("wichtigesLego") || entityIn.getName().equals("billigesBrot") || entityIn.getName().equals("flixAmSoupen")) {
             		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation("Label/label.png"));
-            		Gui.drawModalRectWithCustomSizedTexture(-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), 2 - 12, -2, 10, 10, 10, 10, 10);
+            		Gui.drawModalRectWithCustomSizedTexture(-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()) + 20, -1, 10, 10, 10, 10, 10, 10);
             	}
             }
             /**
