@@ -10,6 +10,7 @@ import me.firephoenix.fireclient.hud.mod.impl.CustomEnchantGlint;
 import me.firephoenix.fireclient.hud.mod.impl.FPSMod;
 import me.firephoenix.fireclient.hud.mod.impl.Keystrokes;
 import me.firephoenix.fireclient.hud.mod.impl.PerspectiveMod;
+import me.firephoenix.fireclient.hud.mod.impl.PotionStatus;
 import me.firephoenix.fireclient.hud.mod.impl.ServerName;
 import me.firephoenix.fireclient.hud.mod.impl.TestMod;
 import me.firephoenix.fireclient.hud.mod.impl.Version;
@@ -28,6 +29,7 @@ public class HudManager
     public ServerName servername;
     public Version version;
     public CosmeticEasterEggs EggHat;
+    public PotionStatus potionstatus;
 
     public HudManager()
     {
@@ -40,6 +42,7 @@ public class HudManager
         hudMods.add(cords = new Coordinates());
         hudMods.add(servername = new ServerName());
         hudMods.add(version = new Version());
+        hudMods.add(potionstatus = new PotionStatus());
         
     }
 
