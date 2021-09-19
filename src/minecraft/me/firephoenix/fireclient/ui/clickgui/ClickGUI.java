@@ -26,7 +26,9 @@ public class ClickGUI extends GuiScreen
         this.modButtons.add(new ModButton(280, 110, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.cords));
         this.modButtons.add(new ModButton(200, 140, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.servername));
         this.modButtons.add(new ModButton(280, 140, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.version));
-        this.modButtons.add(new ModButton(320, 110, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.potionstatus));
+        this.modButtons.add(new ModButton(200, 170, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.potionstatus));
+        this.modButtons.add(new ModButton(200, 200, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.direction));
+        this.modButtons.add(new ModButton(280, 170, 42, mc.fontRendererObj.FONT_HEIGHT + 5, Fireclient.INSTANCE.hudManager.time));
     }
 
     @Override

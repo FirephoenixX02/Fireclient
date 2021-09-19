@@ -359,7 +359,7 @@ public abstract class Render<T extends Entity> {
 					Minecraft.getMinecraft().getTextureManager()
 							.bindTexture(new ResourceLocation("Label/label_gold.png"));
 					Gui.drawModalRectWithCustomSizedTexture(
-							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()) + 20, -1, 10, 10,
+							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), -1, 10, 10,
 							10, 10, 10, 10);
 				}
 			}
@@ -376,7 +376,7 @@ public abstract class Render<T extends Entity> {
 					Minecraft.getMinecraft().getTextureManager()
 							.bindTexture(new ResourceLocation("Label/label_light_red.png"));
 					Gui.drawModalRectWithCustomSizedTexture(
-							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()) + 20, -1, 10, 10,
+							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), -1, 10, 10,
 							10, 10, 10, 10);
 				}
 			}
@@ -393,7 +393,7 @@ public abstract class Render<T extends Entity> {
 					Minecraft.getMinecraft().getTextureManager()
 							.bindTexture(new ResourceLocation("Label/label_dark_red.png"));
 					Gui.drawModalRectWithCustomSizedTexture(
-							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()) + 20, -1, 10, 10,
+							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), -1, 10, 10,
 							10, 10, 10, 10);
 				}
 			}
@@ -411,7 +411,7 @@ public abstract class Render<T extends Entity> {
 					Minecraft.getMinecraft().getTextureManager()
 							.bindTexture(new ResourceLocation("Label/label_purple.png"));
 					Gui.drawModalRectWithCustomSizedTexture(
-							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()) + 20, -1, 10, 10,
+							-fontrenderer.getStringWidth(entityIn.getDisplayName().getFormattedText()), -1, 10, 10,
 							10, 10, 10, 10);
 				}
 			}

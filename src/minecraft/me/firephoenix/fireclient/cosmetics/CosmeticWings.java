@@ -19,6 +19,7 @@ import java.util.UUID;
 
 import org.lwjgl.opengl.GL11;
 
+import me.firephoenix.fireclient.Fireclient;
 import me.firephoenix.fireclient.cosmetics.utils.*;
 
 
@@ -43,14 +44,12 @@ public class CosmeticWings extends CosmeticBase
             GlStateManager.rotate(20, 1, 0, 0);
             GlStateManager.translate(0, 0.20, -0.05);
         }
-
         if (player == Minecraft.getMinecraft().thePlayer)
         {
             Minecraft.getMinecraft().fontRendererObj.drawString("", 0, 0, -1, true);
-            this.wingsModel.render((Entity)player, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.wingsModel.render((Entity)player, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);        
         }
 
-        String uuid = player.getUniqueID().toString();
         GL11.glPopMatrix();
     }
 
