@@ -15,6 +15,7 @@ import me.firephoenix.fireclient.hud.mod.impl.PotionStatus;
 import me.firephoenix.fireclient.hud.mod.impl.ServerName;
 import me.firephoenix.fireclient.hud.mod.impl.TestMod;
 import me.firephoenix.fireclient.hud.mod.impl.Time;
+import me.firephoenix.fireclient.hud.mod.impl.Velocity;
 import me.firephoenix.fireclient.hud.mod.impl.Version;
 
 public class HudManager
@@ -34,6 +35,7 @@ public class HudManager
     public PotionStatus potionstatus;
     public Direction direction;
     public Time time;
+    public Velocity velo;
 
     public HudManager()
     {
@@ -49,6 +51,7 @@ public class HudManager
         hudMods.add(potionstatus = new PotionStatus());
         hudMods.add(direction = new Direction());
         hudMods.add(time = new Time());
+        hudMods.add(velo = new Velocity());
     }
 
     public static CustomEnchantGlint getGlintColor()
