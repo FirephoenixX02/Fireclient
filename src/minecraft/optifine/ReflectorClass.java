@@ -6,9 +6,9 @@ public class ReflectorClass
     private boolean checked;
     private Class targetClass;
 
-    public ReflectorClass(String p_i81_1_)
+    public ReflectorClass(String string)
     {
-        this(p_i81_1_, false);
+        this(string, false);
     }
 
     public ReflectorClass(String p_i82_1_, boolean p_i82_2_)

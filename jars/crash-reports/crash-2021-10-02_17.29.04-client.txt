@@ -1,0 +1,94 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 02.10.21 17:29
+Description: Unexpected error
+
+java.lang.IllegalArgumentException: connect: The address can't be null
+	at java.net.Socket.connect(Socket.java:578)
+	at me.firephoenix.fireclient.hud.mod.impl.Ping.getPing(Ping.java:65)
+	at me.firephoenix.fireclient.hud.mod.impl.Ping.draw(Ping.java:24)
+	at me.firephoenix.fireclient.hud.mod.HudManager.renderMods(HudManager.java:72)
+	at net.minecraft.client.gui.GuiIngame.renderTooltip(GuiIngame.java:385)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:161)
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1354)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1131)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:423)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.net.Socket.connect(Socket.java:578)
+	at me.firephoenix.fireclient.hud.mod.impl.Ping.getPing(Ping.java:65)
+	at me.firephoenix.fireclient.hud.mod.impl.Ping.draw(Ping.java:24)
+	at me.firephoenix.fireclient.hud.mod.HudManager.renderMods(HudManager.java:72)
+	at net.minecraft.client.gui.GuiIngame.renderTooltip(GuiIngame.java:385)
+	at net.minecraft.client.gui.GuiIngame.renderGameOverlay(GuiIngame.java:161)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['NieGestorben'/29624177, l='MpServer', x=0,50, y=50,00, z=0,50]]
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: 0,00,50,00,0,00 - World: (0,50,0), Chunk: (at 0,3,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 0 game time, 0 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: adventure (ID 2). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityPlayerSP['NieGestorben'/29624177, l='MpServer', x=0,50, y=50,00, z=0,50]]
+	Retry entities: 0 total; []
+	Server brand: BungeeCord (git:BungeeCord-Bootstrap:1.17-R0.1-SNAPSHOT:bda1605:1598) <- Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:401)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2758)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:452)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.8
+	Operating System: Linux (amd64) version 5.11.0-37-generic
+	CPU: 16x Intel(R) Xeon(R) CPU X5560 @ 2.80GHz
+	Java Version: 1.8.0_292, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 3917978224 bytes (3736 MB) / 4116185088 bytes (3925 MB) up to 4116185088 bytes (3925 MB)
+	JVM Flags: 2 total; -Xmx4096M -Xms4096M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 1050 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 460.91.03, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 16x Intel(R) Xeon(R) CPU X5560 @ 2.80GHz
+	OptiFine Version: OptiFine_1.8.8_HD_U_H8
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 460.91.03
+	OpenGlRenderer: GeForce GTX 1050 Ti/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 16
